@@ -12,8 +12,12 @@ declare module 'motia' {
   }
 
   interface Handlers {
+    'OnboardingValidate': EventHandler<never, { topic: 'onboarding-profile-created'; data: never }>
+    'OnboardingProfileCreated': EventHandler<never, { topic: 'onboarding-metadata-stored'; data: never }>
+    'OnboardingMetadataStored': EventHandler<never, { topic: 'onboarding-risk-check'; data: {} }>
     'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
     'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
+    'OnboardingStart': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'onboarding-validate'; data: never }>
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>

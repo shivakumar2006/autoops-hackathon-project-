@@ -10,31 +10,65 @@
     }
   },
   {
+    "id": "payment-flow",
+    "config": {
+      "src/hello/events/fraud/fraud_check_step.py": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  {
     "id": "auth-flow",
     "config": {
       "src/hello/events/validation/validate-signup.step.js": {
-        "x": 347,
-        "y": -125
+        "x": 340,
+        "y": -76
       },
       "src/hello/events/validation/validate-login.step.js": {
         "x": 374,
         "y": 369
       },
       "src/hello/api/auth-signup.step.ts": {
-        "x": -150,
-        "y": 1
+        "x": -270,
+        "y": 48
       },
       "src/hello/api/auth-me.step.ts": {
-        "x": -498,
-        "y": -3
+        "x": -619,
+        "y": 50
       },
       "src/hello/api/auth-login.step.ts": {
-        "x": -299,
-        "y": 214
+        "x": -313,
+        "y": 260
       },
       "src/hello/events/fraud/fraud_check_step.py": {
         "x": 746,
         "y": 93
+      }
+    }
+  },
+  {
+    "id": "onboarding-flow",
+    "config": {
+      "src/hello/onboarding/onboarding-validate.step.js": {
+        "x": 398,
+        "y": 34
+      },
+      "src/hello/onboarding/onboarding-profile-create.step.ts": {
+        "x": 790,
+        "y": -25
+      },
+      "src/hello/onboarding/onboarding-metadata.stored.step.ts": {
+        "x": 15,
+        "y": 342
+      },
+      "src/hello/api/onboarding-start.step.ts": {
+        "x": 0,
+        "y": 39
+      },
+      "src/hello/events/fraud/fraud_check_step.py": {
+        "x": 447,
+        "y": 352
       }
     }
   }
