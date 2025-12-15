@@ -12,6 +12,16 @@ declare module 'motia' {
   }
 
   interface Handlers {
+    'PaymentValidate': EventHandler<never, { topic: 'payment-created'; data: never }>
+    'FraudPaymentRiskCheck': EventHandler<never, { topic: 'payment-fraud-check'; data: never }>
+    'PaymentReconciliationJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
+    'PaymentReconciliationJob': CronHandler<{ topic: 'payment-recon'; data: never }>
+    'PaymentInvoice': EventHandler<never, { topic: 'payment-receipt-sent'; data: never }>
+    'PaymentFraudCheck': EventHandler<never, { topic: 'payment-confirmed'; data: never }>
+    'PaymentCompleted': EventHandler<never, never>
+    'PaymentReceiptSent': EventHandler<never, { topic: 'payment-completed'; data: never }>
+    'PaymentCreate': EventHandler<never, { topic: 'payment-risk-scanned'; data: never }>
+    'PaymentConfirm': EventHandler<never, { topic: 'payment-invoice-generated'; data: never }>
     'OnboardingValidate': EventHandler<never, { topic: 'onboarding-profile-created'; data: never }>
     'OnboardingSendEmail': EventHandler<never, { topic: 'onboarding-completed'; data: never }>
     'OnboardingRiskResult': EventHandler<never, { topic: 'onboarding-email-sent'; data: never }>
@@ -21,11 +31,14 @@ declare module 'motia' {
     'OnboardingComplete': EventHandler<never, never>
     'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
     'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
+    'PaymentStartApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'payment-validate'; data: never }>
     'OnboardingStart': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'onboarding-validate'; data: never }>
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
     'FraudCheckPython': EventHandler<{}, { topic: 'risk-evaluated'; data: never }>
+    'DeadLetterRetryJob': CronHandler<{ topic: 'dead-letter-retry'; data: never }>
+    'DeadLetterRetryJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
   }
     
 }

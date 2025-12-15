@@ -13,12 +13,12 @@ config = {
     "subscribes": [
     "user-signed-up",
     "user-logged-in",
-    "payment-initiated",
-    "onboarding-risk-result"
+    "onboarding-risk-result",
+    # "payment-confirmed",
     #"onboarding-risk-result"
     ],
     "emits": ["risk-evaluated"],
-    "flows": ["auth-flow", "payment-flow", "onboarding-flow"],
+    "flows": ["auth-flow", "onboarding-flow"],
     "input": {
         "type": "object",
          "properties": {},             
