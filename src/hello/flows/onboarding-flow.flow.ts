@@ -7,7 +7,8 @@ export const config = {
         "onboarding-profile-created",
         "onboarding-metadata-stored",
         "onboarding-risk-check",
-        "OnboardingRiskPython",
+        "FraudCheckPython",
+        // "risk-evaluated",
         "onboarding-risk-result",
         "onboarding-email-sent",
         "onboarding-completed"

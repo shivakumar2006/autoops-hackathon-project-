@@ -14,7 +14,8 @@ config = {
     "user-signed-up",
     "user-logged-in",
     "payment-initiated",
-    "onboarding-risk-check"
+    "onboarding-risk-result"
+    #"onboarding-risk-result"
     ],
     "emits": ["risk-evaluated"],
     "flows": ["auth-flow", "payment-flow", "onboarding-flow"],
@@ -40,6 +41,8 @@ async def handler(input_data, context):
 
     if "paymentId" in input_data or "amount" in input_data:
         topic = "payment-initiated"
+    elif input_data.get("stage") == "onboarding" or input_data.get("onboarding") is True:
+        topic = "onboarding"
     elif "userId" in input_data or "email" in input_data: 
         topic = "user-signed-up" if input_data.get("createdAt") else "user-logged-in"
     else: 
@@ -78,6 +81,19 @@ async def handler(input_data, context):
             score = round(random.uniform(0.01, 0.35), 2)
             label = "low"
             reason = "normal_behavior"
+    # NEW: ONBOARDING FRAUD RISK
+    elif topic == "onboarding":
+        email = input_data.get("email", "")
+        risky_domains = ["tempmail.com", "mailinator.com", "disposable.xyz"]
+
+        if email.split("@")[-1].lower() in risky_domains:
+            score = round(random.uniform(0.7, 0.95), 2)
+            label = "high"
+            reason = "suspicious_onboarding_email"
+        else:
+            score = round(random.uniform(0.01, 0.20), 2)
+            label = "low"
+            reason = "normal_onboarding"
     else:
         score = round(random.uniform(0.01, 0.05), 2)
         label = "low"

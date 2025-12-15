@@ -51,24 +51,40 @@
     "id": "onboarding-flow",
     "config": {
       "src/hello/onboarding/onboarding-validate.step.js": {
-        "x": 398,
-        "y": 34
+        "x": 377,
+        "y": -424
+      },
+      "src/hello/onboarding/onboarding-send-email.step.ts": {
+        "x": 983,
+        "y": -26
+      },
+      "src/hello/onboarding/onboarding-risk-result.step.ts": {
+        "x": 469,
+        "y": -26
+      },
+      "src/hello/onboarding/onboarding-risk-check.step.ts": {
+        "x": 2053,
+        "y": -441
       },
       "src/hello/onboarding/onboarding-profile-create.step.ts": {
-        "x": 790,
-        "y": -25
+        "x": 903,
+        "y": -503
       },
       "src/hello/onboarding/onboarding-metadata.stored.step.ts": {
-        "x": 15,
-        "y": 342
+        "x": 1426,
+        "y": -441
+      },
+      "src/hello/onboarding/onboarding-complete.step.ts": {
+        "x": 1552,
+        "y": -17
       },
       "src/hello/api/onboarding-start.step.ts": {
-        "x": 0,
-        "y": 39
+        "x": -62,
+        "y": -389
       },
       "src/hello/events/fraud/fraud_check_step.py": {
-        "x": 447,
-        "y": 352
+        "x": -46,
+        "y": 14
       }
     }
   }

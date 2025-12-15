@@ -13,15 +13,19 @@ declare module 'motia' {
 
   interface Handlers {
     'OnboardingValidate': EventHandler<never, { topic: 'onboarding-profile-created'; data: never }>
+    'OnboardingSendEmail': EventHandler<never, { topic: 'onboarding-completed'; data: never }>
+    'OnboardingRiskResult': EventHandler<never, { topic: 'onboarding-email-sent'; data: never }>
+    'OnboardingRiskCheck': EventHandler<never, { topic: 'onboarding-risk-result'; data: {} }>
     'OnboardingProfileCreated': EventHandler<never, { topic: 'onboarding-metadata-stored'; data: never }>
-    'OnboardingMetadataStored': EventHandler<never, { topic: 'onboarding-risk-check'; data: {} }>
+    'OnboardingMetadataStored': EventHandler<never, { topic: 'onboarding-risk-check'; data: never }>
+    'OnboardingComplete': EventHandler<never, never>
     'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
     'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
     'OnboardingStart': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'onboarding-validate'; data: never }>
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
-    'FraudCheckPython': EventHandler<{}, never>
+    'FraudCheckPython': EventHandler<{}, { topic: 'risk-evaluated'; data: never }>
   }
     
 }
