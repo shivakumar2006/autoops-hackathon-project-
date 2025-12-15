@@ -15,7 +15,6 @@ declare module 'motia' {
     'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
     'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
-    'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
     'FraudCheckPython': EventHandler<{}, never>
   }
