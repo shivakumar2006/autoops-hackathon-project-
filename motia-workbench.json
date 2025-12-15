@@ -21,12 +21,16 @@
         "y": 369
       },
       "src/hello/api/auth-signup.step.ts": {
-        "x": -170,
+        "x": -150,
         "y": 1
       },
+      "src/hello/api/auth-me.step.ts": {
+        "x": -498,
+        "y": -3
+      },
       "src/hello/api/auth-login.step.ts": {
-        "x": -347,
-        "y": 239
+        "x": -299,
+        "y": 214
       },
       "src/hello/events/fraud/fraud_check_step.py": {
         "x": 746,
