@@ -20,7 +20,6 @@ declare module 'motia' {
     'SubscriptionFinalize': EventHandler<never, never>
     'SubscriptionSendEmail': EventHandler<never, { topic: 'subscription-renewal-finalize'; data: never }>
     'SubscriptionCreatePayment': EventHandler<never, { topic: 'subscription-payment-retry'; data: never }>
-    'risk-rescan-job': CronHandler<{ topic: 'risk-eval'; data: never }>
     'risk-eval': EventHandler<never, never>
     'PaymentValidate': EventHandler<never, { topic: 'payment-created'; data: never }>
     'FraudPaymentRiskCheck': EventHandler<never, { topic: 'payment-fraud-check'; data: never }>
