@@ -12,6 +12,16 @@ declare module 'motia' {
   }
 
   interface Handlers {
+    'SubscriptionValidate': EventHandler<never, { topic: 'subscription-risk-check'; data: never }>
+    'SubscriptionRiskCheck': EventHandler<never, { topic: 'subscription-create-payment'; data: never }>
+    'SubscriptionRenewalJob': CronHandler<{ topic: 'subscription-validate'; data: never }>
+    'SubscriptionPaymentRetry': EventHandler<never, { topic: 'subscription-invoice-generate'; data: never }>
+    'SubscriptionInvoiceGenerate': EventHandler<never, { topic: 'subscription-email-send'; data: never }>
+    'SubscriptionFinalize': EventHandler<never, never>
+    'SubscriptionSendEmail': EventHandler<never, { topic: 'subscription-renewal-finalize'; data: never }>
+    'SubscriptionCreatePayment': EventHandler<never, { topic: 'subscription-payment-retry'; data: never }>
+    'risk-rescan-job': CronHandler<{ topic: 'risk-eval'; data: never }>
+    'risk-eval': EventHandler<never, never>
     'PaymentValidate': EventHandler<never, { topic: 'payment-created'; data: never }>
     'FraudPaymentRiskCheck': EventHandler<never, { topic: 'payment-fraud-check'; data: never }>
     'PaymentReconciliationJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
@@ -22,6 +32,8 @@ declare module 'motia' {
     'PaymentReceiptSent': EventHandler<never, { topic: 'payment-completed'; data: never }>
     'PaymentCreate': EventHandler<never, { topic: 'payment-risk-scanned'; data: never }>
     'PaymentConfirm': EventHandler<never, { topic: 'payment-invoice-generated'; data: never }>
+    'DeadLetterRetryJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
+    'DeadLetterRetryJob': CronHandler<{ topic: 'dead-letter-retry'; data: never }>
     'OnboardingValidate': EventHandler<never, { topic: 'onboarding-profile-created'; data: never }>
     'OnboardingSendEmail': EventHandler<never, { topic: 'onboarding-completed'; data: never }>
     'OnboardingRiskResult': EventHandler<never, { topic: 'onboarding-email-sent'; data: never }>
@@ -31,14 +43,17 @@ declare module 'motia' {
     'OnboardingComplete': EventHandler<never, never>
     'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
     'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
-    'PaymentStartApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'payment-validate'; data: never }>
+    'RetryEngine': EventHandler<never, { topic: 'retry-event-execute'; data: never }>
+    'AdminDLQList': ApiRouteHandler<Record<string, unknown>, unknown, never>
+    'DeadLetterQueueHandler': EventHandler<never, { topic: 'retry-needed'; data: never }>
+    'AutoUnfreezeLogic': EventHandler<never, never>
+    'AdminReprocessTrigger': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'retry-event-execute'; data: never }>
+    'PaymentStartApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'payment-validate'; data: never } | { topic: 'event.failed'; data: never }>
     'OnboardingStart': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'onboarding-validate'; data: never }>
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
     'FraudCheckPython': EventHandler<{}, { topic: 'risk-evaluated'; data: never }>
-    'DeadLetterRetryJob': CronHandler<{ topic: 'dead-letter-retry'; data: never }>
-    'DeadLetterRetryJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
   }
     
 }

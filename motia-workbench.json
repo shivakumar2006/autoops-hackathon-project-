@@ -39,47 +39,6 @@
     }
   },
   {
-    "id": "onboarding-flow",
-    "config": {
-      "src/hello/onboarding/onboarding-validate.step.js": {
-        "x": 377,
-        "y": -424
-      },
-      "src/hello/onboarding/onboarding-send-email.step.ts": {
-        "x": 983,
-        "y": -26
-      },
-      "src/hello/onboarding/onboarding-risk-result.step.ts": {
-        "x": 469,
-        "y": -26
-      },
-      "src/hello/onboarding/onboarding-risk-check.step.ts": {
-        "x": 2053,
-        "y": -441
-      },
-      "src/hello/onboarding/onboarding-profile-create.step.ts": {
-        "x": 903,
-        "y": -503
-      },
-      "src/hello/onboarding/onboarding-metadata.stored.step.ts": {
-        "x": 1426,
-        "y": -441
-      },
-      "src/hello/onboarding/onboarding-complete.step.ts": {
-        "x": 1552,
-        "y": -17
-      },
-      "src/hello/api/onboarding-start.step.ts": {
-        "x": -62,
-        "y": -389
-      },
-      "src/hello/events/fraud/fraud_check_step.py": {
-        "x": -46,
-        "y": 14
-      }
-    }
-  },
-  {
     "id": "payment-flow",
     "config": {
       "src/hello/payment/payment-validate.step.js": {
@@ -133,6 +92,118 @@
       "src/hello/payment/dead-letter-retry-job.step.ts": {
         "x": -446,
         "y": 105
+      }
+    }
+  },
+  {
+    "id": "risk-flow",
+    "config": {
+      "src/hello/risk-rescan/risk-rescan-job.step.ts": {
+        "x": -26,
+        "y": 0
+      },
+      "src/hello/risk-rescan/risk-eval.step.ts": {
+        "x": 264,
+        "y": 32
+      }
+    }
+  },
+  {
+    "id": "subscription-renewal-flow",
+    "config": {
+      "src/hello/subscription/subscription-validate.step.ts": {
+        "x": 95,
+        "y": -176
+      },
+      "src/hello/subscription/subscription-risk-check.step.ts": {
+        "x": 570,
+        "y": -176
+      },
+      "src/hello/subscription/subscription-renewal-job.step.ts": {
+        "x": -409,
+        "y": -208
+      },
+      "src/hello/subscription/subscription-payment-retry.step.ts": {
+        "x": 104,
+        "y": 45
+      },
+      "src/hello/subscription/subscription-invoice-generate.step.ts": {
+        "x": 567,
+        "y": 45
+      },
+      "src/hello/subscription/subscription-finalize.step.ts": {
+        "x": 598,
+        "y": 283
+      },
+      "src/hello/subscription/subscription-email.step.ts": {
+        "x": 1123,
+        "y": 45
+      },
+      "src/hello/subscription/subscription-create-payment.step.ts": {
+        "x": 1172,
+        "y": -176
+      }
+    }
+  },
+  {
+    "id": "onboarding-flow",
+    "config": {
+      "src/hello/onboarding/onboarding-validate.step.js": {
+        "x": 377,
+        "y": -424
+      },
+      "src/hello/onboarding/onboarding-send-email.step.ts": {
+        "x": 983,
+        "y": -26
+      },
+      "src/hello/onboarding/onboarding-risk-result.step.ts": {
+        "x": 469,
+        "y": -26
+      },
+      "src/hello/onboarding/onboarding-risk-check.step.ts": {
+        "x": 2053,
+        "y": -441
+      },
+      "src/hello/onboarding/onboarding-profile-create.step.ts": {
+        "x": 903,
+        "y": -503
+      },
+      "src/hello/onboarding/onboarding-metadata.stored.step.ts": {
+        "x": 1426,
+        "y": -441
+      },
+      "src/hello/onboarding/onboarding-complete.step.ts": {
+        "x": 1552,
+        "y": -17
+      },
+      "src/hello/api/onboarding-start.step.ts": {
+        "x": -62,
+        "y": -389
+      },
+      "src/hello/events/fraud/fraud_check_step.py": {
+        "x": -46,
+        "y": 14
+      }
+    }
+  },
+  {
+    "id": "auto-recovery-flow",
+    "config": {
+      "src/hello/dlq/retry-engine.step.ts": {
+        "x": 274,
+        "y": 0
+      },
+      "src/hello/dlq/dead-letter-queue.step.ts": {
+        "x": 0,
+        "y": 0
+      },
+      "src/hello/dlq/auto-unfreeze.step.ts": {
+        "x": 536,
+        "y": 72
+      },
+      "src/hello/dlq/admin-reprocess.step.ts": {
+        "x": 6,
+        "y": 136
       }
     }
   }

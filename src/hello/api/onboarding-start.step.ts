@@ -2,11 +2,12 @@ import { z } from "zod";
 import { verifyToken } from "../utils/jwt";
 
 const Body = z.object({
-    gender: z.object().optional(),
+    gender: z.string().optional(),
     age: z.number().optional(),
     bio: z.string().optional(),
-    interests: z.union([z.array(z.string()), z.string()]).optional()
+    interests: z.array(z.string()).optional()
 });
+
 
 export const config = {
     name: "OnboardingStart",
