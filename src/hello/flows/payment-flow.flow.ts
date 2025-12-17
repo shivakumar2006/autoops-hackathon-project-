@@ -10,6 +10,7 @@ export const config = {
         "payment-risk-scanned",
         // "FraudCheckPython",
         "payment-fraud-check",
+        "risk-evaluated",
         "payment-confirmed",
         "payment-invoice-generated",
         "payment-receipt-sent",

@@ -3,7 +3,7 @@ export const config = {
     type: "event",
     description: "Fraud scoring engine for payments (TS version)",
     subscribes: ["payment-fraud-check"],
-    emits: ["payment-confirmed"],
+    emits: ["payment-confirmed", "risk-evaluated"],
     flows: ["payment-flow"]
 };
 
@@ -38,6 +38,22 @@ export const handler = async (input, { emit, logger }) => {
         reason
     });
 
+    // first trust engine 
+    await emit({
+        topic: "risk-evaluated",
+        data: {
+            userId: input.userId,
+            paymentId: input.paymentId,
+            score,
+            label,
+            reason,
+            evaluatedAt: new Date().toISOString(),
+            sourceTopic: "payment-fraud-check",
+            modelVersion: "v0.1-payment-ts"
+        }
+    });
+
+    // then normal go to normal step
     await emit({
         topic: "payment-confirmed",
         data: {

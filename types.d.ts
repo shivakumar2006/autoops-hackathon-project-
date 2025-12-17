@@ -12,6 +12,8 @@ declare module 'motia' {
   }
 
   interface Handlers {
+    'TrustRecord': EventHandler<never, never>
+    'TrustEngine': EventHandler<never, { topic: 'trust-updated'; data: never }>
     'SubscriptionValidate': EventHandler<never, { topic: 'subscription-risk-check'; data: never }>
     'SubscriptionRiskCheck': EventHandler<never, { topic: 'subscription-create-payment'; data: never }>
     'SubscriptionRenewalJob': CronHandler<{ topic: 'subscription-validate'; data: never }>
@@ -20,13 +22,14 @@ declare module 'motia' {
     'SubscriptionFinalize': EventHandler<never, never>
     'SubscriptionSendEmail': EventHandler<never, { topic: 'subscription-renewal-finalize'; data: never }>
     'SubscriptionCreatePayment': EventHandler<never, { topic: 'subscription-payment-retry'; data: never }>
+    'risk-rescan-job': CronHandler<{ topic: 'risk-eval'; data: never }>
     'risk-eval': EventHandler<never, never>
     'PaymentValidate': EventHandler<never, { topic: 'payment-created'; data: never }>
     'FraudPaymentRiskCheck': EventHandler<never, { topic: 'payment-fraud-check'; data: never }>
     'PaymentReconciliationJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
     'PaymentReconciliationJob': CronHandler<{ topic: 'payment-recon'; data: never }>
     'PaymentInvoice': EventHandler<never, { topic: 'payment-receipt-sent'; data: never }>
-    'PaymentFraudCheck': EventHandler<never, { topic: 'payment-confirmed'; data: never }>
+    'PaymentFraudCheck': EventHandler<never, { topic: 'payment-confirmed'; data: never } | { topic: 'risk-evaluated'; data: never }>
     'PaymentCompleted': EventHandler<never, never>
     'PaymentReceiptSent': EventHandler<never, { topic: 'payment-completed'; data: never }>
     'PaymentCreate': EventHandler<never, { topic: 'payment-risk-scanned'; data: never }>
