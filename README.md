@@ -6,11 +6,13 @@ This project is a full enterprise grade backend system, built using Motia, Types
 
 This is designed specially for Backend Reloaded Hackathon, this project demonstrate real world backend engineering concepts.
 
+
 ⭐️ Why This Project Stands Out 
 -> Built using 8 different independent event driven workflows.
 -> Including fraud detection, trust scoring, DLQ with retry, subscription renewal, analytics and more.
 -> One single api provides full system insights.
 -> judges immediately see system-design + backend intelligence.
+
 
 📈 High level Architecture 
 Event driven architecture with 7 major flows
@@ -24,6 +26,7 @@ Event driven architecture with 7 major flows
 | **Fraud Engine (Python + TS)**       | Risk scoring for payments & onboarding |
 | **Trust Engine Flow**                | Trust score updates + reasoning        |
 | **Auto-Recovery Flow (DLQ + Retry)** | Ensures system never fails             |
+
 
 💡 Features 
 
@@ -122,6 +125,7 @@ GET /api/admin/analytics returns complete system intelligence:
 - Event Driven Architecture 
 - Backeground Jobs 
 
+
 🧪 How to Test 
 
 1️⃣ Signup 
@@ -142,7 +146,7 @@ JSON:
     }
 - Add token in Headers: 
     key - Authorization 
-    value - Bearer <add jwt token here>
+    value - Bearer <!-- <add jwt token here> -->
 
 3️⃣ Start Onboarding 
 - POST /onboarding/start
@@ -155,7 +159,7 @@ JSON:
     }
 - Add token in Headers: 
     key - Authorization 
-    value - Bearer <add jwt token here>
+    value - Bearer <!-- <add jwt token here> -->
 
 4️⃣ Start Payment 
 - POST /payment/start
@@ -169,25 +173,26 @@ JSON:
     }
 - Add token in Headers: 
     key - Authorization 
-    value - Bearer <add jwt token here>
+    value - Bearer <!-- <add jwt token here> -->
 
 5️⃣ View Analytics
 GET /api/admin/analytics 
 - Add token in Headers: 
     key - Authorization 
-    value - Bearer <add jwt token here>
+    value - Bearer <!-- <add jwt token here> -->
 
 6️⃣ Get DLQ 
 GET /admin/dlq 
 - Add token in Headers: 
     key - Authorization 
-    value - Bearer <add jwt token here>
+    value - Bearer <!-- <add jwt token here> -->
 
 7️⃣ Get user details 
 GET /auth/me 
 - Add token in Headers: 
     key - Authorization 
-    value - Bearer <add jwt token here>
+    value - Bearer <!-- <add jwt token here> -->
+
 
 🏆 Why This Backend Can Win
 - Professional-level architecture
@@ -196,6 +201,7 @@ GET /auth/me
 - Reliability patterns (DLQ, retry, cron)
 - Judges immediately see thought process + engineering depth
 - pure backend excellence
+
 
 This is not a CRUD backend.
 It’s a fully event-driven intelligent system with fraud detection, trust scoring, payments, subscriptions, DLQ, retry engine, auto-unfreeze, and real-time analytics — designed exactly how fintech & SaaS platforms operate
