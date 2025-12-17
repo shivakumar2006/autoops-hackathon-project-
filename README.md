@@ -8,10 +8,10 @@ This is designed specially for Backend Reloaded Hackathon, this project demonstr
 
 
 ⭐️ Why This Project Stands Out 
--> Built using 8 different independent event driven workflows.
--> Including fraud detection, trust scoring, DLQ with retry, subscription renewal, analytics and more.
--> One single api provides full system insights.
--> judges immediately see system-design + backend intelligence.
+- Built using 8 different independent event driven workflows.
+- Including fraud detection, trust scoring, DLQ with retry, subscription renewal, analytics and more.
+- One single api provides full system insights.
+- judges immediately see system-design + backend intelligence.
 
 📈 High level Architecture 
 Event driven architecture with 7 major flows
