@@ -145,8 +145,8 @@ JSON:
       "password": "3456789"
     }
 - Add token in Headers: 
-    key - Authorization 
-    value - Bearer <!-- <add jwt token here> -->
+    key - Authorization,
+    value - Bearer //add jwt token here//
 
 3️⃣ Start Onboarding 
 - POST /onboarding/start
@@ -158,8 +158,8 @@ JSON:
       "interests": ["coding", "making new things"]
     }
 - Add token in Headers: 
-    key - Authorization 
-    value - Bearer <!-- <add jwt token here> -->
+    key - Authorization,
+    value - Bearer //add jwt token here//
 
 4️⃣ Start Payment 
 - POST /payment/start
@@ -172,26 +172,26 @@ JSON:
       "productId": "ultra-plan"
     }
 - Add token in Headers: 
-    key - Authorization 
-    value - Bearer <!-- <add jwt token here> -->
+    key - Authorization, 
+    value - Bearer //add jwt token here//
 
 5️⃣ View Analytics
 GET /api/admin/analytics 
 - Add token in Headers: 
-    key - Authorization 
-    value - Bearer <!-- <add jwt token here> -->
+    key - Authorization, 
+    value - Bearer //add jwt token here//
 
 6️⃣ Get DLQ 
 GET /admin/dlq 
 - Add token in Headers: 
-    key - Authorization 
-    value - Bearer <!-- <add jwt token here> -->
+    key - Authorization, 
+    value - Bearer //add jwt token here//
 
 7️⃣ Get user details 
 GET /auth/me 
 - Add token in Headers: 
-    key - Authorization 
-    value - Bearer <!-- <add jwt token here> -->
+    key - Authorization, 
+    value - Bearer //add jwt token here//
 
 
 🏆 Why This Backend Can Win
