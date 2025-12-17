@@ -13,6 +13,25 @@ This is designed specially for Backend Reloaded Hackathon, this project demonstr
 -> One single api provides full system insights.
 -> judges immediately see system-design + backend intelligence.
 
+┌────────────┐       ┌──────────────┐        ┌──────────────┐
+│ API Routes │  ---> │ Event System │  --->  │   Workflows   │
+└────────────┘       └──────────────┘        └──────────────┘
+                                │
+                                ▼
+                       ┌────────────────┐
+                       │ Fraud Engine   │ (TS + Python)
+                       └────────────────┘
+                                │
+                                ▼
+                       ┌────────────────┐
+                       │ Trust Engine   │
+                       └────────────────┘
+                                │
+                                ▼
+                       ┌────────────────┐
+                       │ MongoDB State  │
+                       └────────────────┘
+
 
 📈 High level Architecture 
 Event driven architecture with 7 major flows
