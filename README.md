@@ -1,4 +1,210 @@
-# autoops
+🚀 BACKEND RELOADED - INTELLIGENT EVENT-DRIVEN BACKEND
+
+Fraud Engine - Trust Engine - Payments - Onboarding - Auto Recovery - Subscription - Analytics 
+
+This project is a full enterprise grade backend system, built using Motia, Typescript, Javascript, Python Fraud Engine and MongoDB.
+
+This is designed specially for Backend Reloaded Hackathon, this project demonstrate real world backend engineering concepts.
+
+⭐️ Why This Project Stands Out 
+-> Built using 8 different independent event driven workflows.
+-> Including fraud detection, trust scoring, DLQ with retry, subscription renewal, analytics and more.
+-> One single api provides full system insights.
+-> judges immediately see system-design + backend intelligence.
+
+📈 High level Architecture 
+Event driven architecture with 7 major flows
+
+| Flow                                 | Purpose                                |
+| ------------------------------------ | -------------------------------------- |
+| **Auth Flow**                        | User signup/login validation           |
+| **Onboarding Flow**                  | Multi-step onboarding + fraud checks   |
+| **Payment Flow**                     | Full payment lifecycle + fraud scoring |
+| **Subscription Flow**                | Auto-renewal via cron job              |
+| **Fraud Engine (Python + TS)**       | Risk scoring for payments & onboarding |
+| **Trust Engine Flow**                | Trust score updates + reasoning        |
+| **Auto-Recovery Flow (DLQ + Retry)** | Ensures system never fails             |
+
+💡 Features 
+
+1️⃣ Intelligent Fraud Engine (Python + Typescript)
+Detects risk using: 
+- suspicious email 
+- unusual payment amount 
+- onboarding anomalies 
+- random threshold based scoring 
+Outputs: 
+- risk-evaluated → used by Trust Engine
+
+2️⃣ Trust Engine + Insights 
+Each fraud score affects trust: 
+
+| Risk | Trust Change |
+| ---- | ------------ |
+| Low  | +5           |
+| Mid  | –5           |
+| High | –15          |
+
+📌 Additional features 
+- Auto freeze accounts with low trust score 
+- Auto unfreeze accounts when retries succees 
+- Full trust timeline stores in Database 
+
+3️⃣ Payment Workflow (end to end)
+- Payment start
+- Validate 
+- create payment document 
+- Fraud risk check 
+- Risk evaluated (trust engine triggered)
+- Confirm payment 
+- Generate invoice
+- Send receipt 
+- Payment completed 
+
+Supports: 
+- Transaction ID 
+- Invoice ID
+- Risk labels (low/mid/high)
+- Detailed event logs
+
+4️⃣ Onboarding Workflow 
+- Create onboarding document 
+- Validate 
+- Store metadata 
+- Fraud risk check 
+- Onboarding risk result 
+- Finalize onboarding 
+- Send confirmation email 
+
+5️⃣ Subscription Renewal (cron job)
+Every day at 1AM, system automatically: 
+- detect expiring susbcriptions 
+- validate 
+- risk-check 
+- attempts payments 
+- retries on failure 
+- send notifications
+
+6️⃣ Auto Recovery System (Dead Letter Queue + Retry) 
+One of the most powerful part 
+- Failed events go to Dead Letter Queue(DLQ)
+- Retry engine uses exponential backoff
+- Auto unfreeze logic improves user trust after recovery 
+Keeps the system self-healing 
+
+7️⃣ Risk Re-scan Engine
+Periodic job that:
+- Re-checks old users
+- Re-analyzes risky actions
+- Updates trust
+- Stores risk history
+
+8️⃣ Analytics Dashboard API
+GET /api/admin/analytics returns complete system intelligence:
+- total users
+- onboarding status
+- trust score stats
+- payment success/failure rates
+- high-risk payments
+- fraud distribution
+- DLQ counts and failure reasons
+- subscription renewal performance
+- last trust update timestamp
+- One API gives judges the entire backend status.
+
+⭐️ Tech Stack 
+- Motia Framework 
+- Typescript 
+- Javascript 
+- Python3 (Fraud Engine)
+- JWT Authentication 
+- Cron jobs 
+- Event Driven Architecture 
+- Backeground Jobs 
+
+🧪 How to Test 
+
+1️⃣ Signup 
+- POST /auth/singup 
+JSON: 
+    {
+      "email": "xyz@gmail.com",
+      "name": "abc",
+      "password": "12345678"
+    }
+
+2️⃣ Login 
+- POST /auth/login 
+JSON:
+    {
+      "email": "xyz@gmail.com",
+      "password": "3456789"
+    }
+- Add token in Headers: 
+    key - Authorization 
+    value - Bearer <add jwt token here>
+
+3️⃣ Start Onboarding 
+- POST /onboarding/start
+JSON: 
+    {
+      "gender": "male",
+      "age": 20,
+      "bio": "I am a software engineer and athlete",
+      "interests": ["coding", "making new things"]
+    }
+- Add token in Headers: 
+    key - Authorization 
+    value - Bearer <add jwt token here>
+
+4️⃣ Start Payment 
+- POST /payment/start
+JSON: 
+    {
+      "userId": "user_001",
+      "paymentId": "pay_123456",
+      "amount": 999,
+      "currency": "INR",
+      "productId": "ultra-plan"
+    }
+- Add token in Headers: 
+    key - Authorization 
+    value - Bearer <add jwt token here>
+
+5️⃣ View Analytics
+GET /api/admin/analytics 
+- Add token in Headers: 
+    key - Authorization 
+    value - Bearer <add jwt token here>
+
+6️⃣ Get DLQ 
+GET /admin/dlq 
+- Add token in Headers: 
+    key - Authorization 
+    value - Bearer <add jwt token here>
+
+7️⃣ Get user details 
+GET /auth/me 
+- Add token in Headers: 
+    key - Authorization 
+    value - Bearer <add jwt token here>
+
+🏆 Why This Backend Can Win
+- Professional-level architecture
+- Clean separation of concerns
+- Realistic business logic (fraud + payments + trust + subscriptions)
+- Reliability patterns (DLQ, retry, cron)
+- Judges immediately see thought process + engineering depth
+- pure backend excellence
+
+This is not a CRUD backend.
+It’s a fully event-driven intelligent system with fraud detection, trust scoring, payments, subscriptions, DLQ, retry engine, auto-unfreeze, and real-time analytics — designed exactly how fintech & SaaS platforms operate
+
+
+
+
+
+<!-- # autoops
 
 A Motia project created with the **multi-language** starter template (TypeScript + Python).
 
@@ -103,4 +309,4 @@ Steps are auto-discovered from your `steps/` or `src/` directories - no manual r
 - [Documentation](https://motia.dev/docs) - Complete guides and API reference
 - [Quick Start Guide](https://motia.dev/docs/getting-started/quick-start) - Detailed getting started tutorial
 - [Core Concepts](https://motia.dev/docs/concepts/overview) - Learn about Steps and Motia architecture
-- [Discord Community](https://discord.gg/motia) - Get help and connect with other developers
+- [Discord Community](https://discord.gg/motia) - Get help and connect with other developers -->

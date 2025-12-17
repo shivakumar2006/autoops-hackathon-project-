@@ -55,6 +55,7 @@ declare module 'motia' {
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
+    'AdminAnalytics': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'FraudCheckPython': EventHandler<{}, { topic: 'risk-evaluated'; data: never }>
   }
     
