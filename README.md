@@ -11,10 +11,12 @@ This is designed specially for Backend Reloaded Hackathon, this project demonstr
 - Built using 8 different independent event driven workflows.
 - Including fraud detection, trust scoring, DLQ with retry, subscription renewal, analytics and more.
 - One single api provides full system insights.
-- judges immediately see system-design + backend intelligence.
+- Designed to highlight system-design + backend intelligence.
 
 📈 High level Architecture 
 Event driven architecture with 7 major flows
+
+API → Validation → Fraud Engine → Trust Engine → Payment → DLQ → Retry → Analytics
 
 | Flow                                 | Purpose                                |
 | ------------------------------------ | -------------------------------------- |
@@ -50,7 +52,7 @@ Each fraud score affects trust:
 📌 Additional features 
 - Auto freeze accounts with low trust score 
 - Auto unfreeze accounts when retries succees 
-- Full trust timeline stores in Database 
+- Full trust timeline stored in Database 
 
 3️⃣ Payment Workflow (end to end)
 - Payment start
@@ -80,7 +82,7 @@ Supports:
 
 5️⃣ Subscription Renewal (cron job)
 Every day at 1AM, system automatically: 
-- detect expiring susbcriptions 
+- detect expiring subcriptions 
 - validate 
 - risk-check 
 - attempts payments 
@@ -114,6 +116,12 @@ GET /api/admin/analytics returns complete system intelligence:
 - last trust update timestamp
 - One API gives judges the entire backend status.
 
+💡 Why Motia?
+AutoOps heavily relies on durable workflows, retries, and observability.
+Motia allows us to model APIs, background jobs, retries, and AI agents
+using a single primitive (Steps), making the system simpler, safer,
+and easier to debug than traditional queue-based architectures., where I add this at the end or start
+
 ⭐️ Tech Stack 
 - Motia Framework 
 - Typescript 
@@ -122,13 +130,13 @@ GET /api/admin/analytics returns complete system intelligence:
 - JWT Authentication 
 - Cron jobs 
 - Event Driven Architecture 
-- Backeground Jobs 
+- Background Jobs 
 
 
 🧪 How to Test 
 
 1️⃣ Signup 
-- POST /auth/singup 
+- POST /auth/signup 
 JSON: 
     {
       "email": "xyz@gmail.com",
