@@ -29,7 +29,6 @@ declare module 'motia' {
     'PaymentReconciliationJobWorker': EventHandler<never, { topic: 'payment-validate'; data: never }>
     'PaymentReconciliationJob': CronHandler<{ topic: 'payment-recon'; data: never }>
     'PaymentInvoice': EventHandler<never, { topic: 'payment-receipt-sent'; data: never }>
-    'PaymentFraudCheck': EventHandler<never, { topic: 'payment-confirmed'; data: never } | { topic: 'risk-evaluated'; data: never }>
     'PaymentCompleted': EventHandler<never, never>
     'PaymentReceiptSent': EventHandler<never, { topic: 'payment-completed'; data: never }>
     'PaymentCreate': EventHandler<never, { topic: 'payment-risk-scanned'; data: never }>
@@ -57,6 +56,7 @@ declare module 'motia' {
     'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
     'AdminAnalytics': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'FraudCheckPython': EventHandler<{}, { topic: 'risk-evaluated'; data: never }>
+    'PaymentFraudCheck': EventHandler<never, { topic: 'payment-confirmed'; data: never } | { topic: 'risk-evaluated'; data: never }>
   }
     
 }

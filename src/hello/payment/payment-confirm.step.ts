@@ -19,7 +19,7 @@ export const handler = async (input: any, { emit, logger }) => {
         { paymentId: input.paymentId },
         {
             $set: {
-                status: "CONFIRMED",
+                status: "SUCCESS",
                 transactionId: txId,
                 updatedAt: new Date().toISOString()
             }

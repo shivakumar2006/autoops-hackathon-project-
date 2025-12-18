@@ -76,7 +76,8 @@ export const handler = async (input: any, { emit, logger }) => {
             frozen,
             reason,
             riskLabel: label,
-            riskScore: score
+            riskScore: score,
+            createdAt: new Date()
         }
     });
 }

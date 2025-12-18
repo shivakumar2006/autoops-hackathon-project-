@@ -1,3 +1,4 @@
+
 export const config = {
     name: "PaymentFraudCheck",
     type: "event",

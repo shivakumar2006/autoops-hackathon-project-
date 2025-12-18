@@ -4,7 +4,7 @@ import { DLQModel } from "../models/dlq";
 export const config = {
     name: "RetryEngine",
     type: "event",
-    description: "Retry engine",
+    description: "Retry engine with delayed job emit",
     subscribes: ["retry-needed"],
     emits: ["retry-event-execute", "retry-failed"],
     flows: ["auto-recovery-flow"]
@@ -18,7 +18,6 @@ export const handler = async (input, { logger, emit }) => {
     await connectMongo();
 
     const record = await DLQModel.findOne({ eventName: input.eventName });
-
     if (!record) return;
 
     if (record.retries >= 5) {
@@ -28,15 +27,16 @@ export const handler = async (input, { logger, emit }) => {
     }
 
     const wait = delay(record.retries);
+    logger.info("Retry scheduled with delay:", { wait });
 
-    logger.info("Retrying event in ms:", { wait });
-
-    setTimeout(async () => {
-        await emit({
-            topic: "retry-event-execute",
-            data: record.payload
-        });
-    }, wait);
+    // 🔥 Motia-compatible delayed retry
+    await emit({
+        topic: "retry-event-execute",
+        data: record.payload,
+        metadata: {
+            delay: wait   // BullMQ style delay
+        }
+    });
 
     record.retries++;
     await record.save();
