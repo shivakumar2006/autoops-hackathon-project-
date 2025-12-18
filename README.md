@@ -172,12 +172,13 @@ JSON:
 - POST /payment/start
 JSON: 
     {
-      "userId": "user_001",
+      "userId": "6940a6f305fdbe3a635f9837", // user id which you generate add here //,
       "paymentId": "pay_123456",
       "amount": 999,
       "currency": "INR",
       "productId": "ultra-plan"
     }
+
 - Add token in Headers: 
     key - Authorization, 
     value - Bearer //add jwt token here//
