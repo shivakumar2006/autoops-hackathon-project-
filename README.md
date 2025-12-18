@@ -117,7 +117,7 @@ GET /api/admin/analytics returns complete system intelligence:
 - One API gives judges the entire backend status.
 
 💡 Why Motia?
-AutoOps heavily relies on durable workflows, retries, and observability.
+- AutoOps heavily relies on durable workflows, retries, and observability.
 Motia allows us to model APIs, background jobs, retries, and AI agents
 using a single primitive (Steps), making the system simpler, safer,
 and easier to debug than traditional queue-based architectures., where I add this at the end or start
