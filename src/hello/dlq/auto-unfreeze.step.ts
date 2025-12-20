@@ -5,7 +5,7 @@ export const config = {
     name: "AutoUnfreezeLogic",
     type: "event",
     description: "Auto unfreeze logic",
-    subscribes: ["retry-event-execute"],
+    subscribes: ["retry_event_execute"],
     emits: [],
     flows: ["auto-recovery-flow"]
 };

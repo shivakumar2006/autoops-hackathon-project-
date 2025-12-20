@@ -45,7 +45,12 @@ declare module 'motia' {
     'OnboardingComplete': EventHandler<never, never>
     'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
     'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
+    'RetryEngine': EventHandler<never, { topic: 'retry_event_execute'; data: never }>
     'AdminDLQList': ApiRouteHandler<Record<string, unknown>, unknown, never>
+    'DeadLetterQueueHandler': EventHandler<never, { topic: 'retry_needed'; data: never }>
+    'AutoUnfreezeLogic': EventHandler<never, never>
+    'AdminReprocessTrigger': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'retry_event_execute'; data: never }>
+    'PaymentStartApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'payment-validate'; data: never } | { topic: 'event-failed'; data: never }>
     'OnboardingStart': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'onboarding-validate'; data: never }>
     'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
