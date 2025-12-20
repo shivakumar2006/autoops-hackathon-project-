@@ -1,4 +1,4 @@
-🚀 BACKEND RELOADED - INTELLIGENT EVENT-DRIVEN BACKEND
+## 🚀 BACKEND RELOADED - INTELLIGENT EVENT-DRIVEN BACKEND
 
 Fraud Engine - Trust Engine - Payments - Onboarding - Auto Recovery - Subscription - Analytics 
 
@@ -7,13 +7,13 @@ This project is a full enterprise grade backend system, built using Motia, Types
 This is designed specially for Backend Reloaded Hackathon, this project demonstrate real world backend engineering concepts.
 
 
-⭐️ Why This Project Stands Out 
+## ⭐️ Why This Project Stands Out 
 - Built using 8 different independent event driven workflows.
 - Including fraud detection, trust scoring, DLQ with retry, subscription renewal, analytics and more.
 - One single api provides full system insights.
 - Designed to highlight system-design + backend intelligence.
 
-📈 High level Architecture 
+## 📈 High level Architecture 
 Event driven architecture with 7 major flows
 
 API → Validation → Fraud Engine → Trust Engine → Payment → DLQ → Retry → Analytics
@@ -49,7 +49,7 @@ Each fraud score affects trust:
 | Mid  | –5           |
 | High | –15          |
 
-📌 Additional features 
+## 📌 Additional features 
 - Auto freeze accounts with low trust score 
 - Auto unfreeze accounts when retries succees 
 - Full trust timeline stored in Database 
@@ -116,13 +116,13 @@ GET /api/admin/analytics returns complete system intelligence:
 - last trust update timestamp
 - One API gives judges the entire backend status.
 
-💡 Why Motia?
+## 💡 Why Motia?
 - AutoOps heavily relies on durable workflows, retries, and observability.
 Motia allows us to model APIs, background jobs, retries, and AI agents
 using a single primitive (Steps), making the system simpler, safer,
 and easier to debug than traditional queue-based architectures., where I add this at the end or start
 
-⭐️ Tech Stack 
+## ⭐️ Tech Stack 
 - Motia Framework 
 - Typescript 
 - Javascript 
@@ -133,7 +133,7 @@ and easier to debug than traditional queue-based architectures., where I add thi
 - Background Jobs 
 
 
-🧪 How to Test 
+## 🧪 How to Test 
 
 1️⃣ Signup 
 - POST /auth/signup 
@@ -214,7 +214,7 @@ mongodb://localhost:27017/autoops
 To run the project, please ensure MongoDB is running locally.
 
 
-🏆 Why This Backend Can Win
+## 🏆 Why This Backend Can Win
 - Professional-level architecture
 - Clean separation of concerns
 - Realistic business logic (fraud + payments + trust + subscriptions)
