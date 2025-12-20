@@ -39,63 +39,6 @@
     }
   },
   {
-    "id": "payment-flow",
-    "config": {
-      "src/hello/payment/payment-validate.step.js": {
-        "x": 42,
-        "y": -161
-      },
-      "src/hello/payment/payment-risk-check.step.ts": {
-        "x": 850,
-        "y": -153
-      },
-      "src/hello/payment/payment-reconciliation-job.step.ts": {
-        "x": -328,
-        "y": -321
-      },
-      "src/hello/payment/payment-reconciliation-job.cron.step.ts": {
-        "x": -802,
-        "y": -421
-      },
-      "src/hello/payment/payment-invoice.step.ts": {
-        "x": 945,
-        "y": 118
-      },
-      "src/hello/payment/payment-fraud-check.step.ts": {
-        "x": 11,
-        "y": 119
-      },
-      "src/hello/payment/payment-finalize.step.ts": {
-        "x": 518,
-        "y": 361
-      },
-      "src/hello/payment/payment-email.step.ts": {
-        "x": 31,
-        "y": 408
-      },
-      "src/hello/payment/payment-create.step.ts": {
-        "x": 445,
-        "y": -244
-      },
-      "src/hello/payment/payment-confirm.step.ts": {
-        "x": 521,
-        "y": 92
-      },
-      "src/hello/api/payment-start.step.ts": {
-        "x": -648,
-        "y": -119
-      },
-      "src/hello/payment/dead-letter-retry-job.cron.step.ts": {
-        "x": -845,
-        "y": 208
-      },
-      "src/hello/payment/dead-letter-retry-job.step.ts": {
-        "x": -446,
-        "y": 105
-      }
-    }
-  },
-  {
     "id": "subscription-renewal-flow",
     "config": {
       "src/hello/subscription/subscription-validate.step.ts": {
@@ -221,6 +164,63 @@
       "src/hello/trust/trust-engine.step.ts": {
         "x": 0,
         "y": 0
+      }
+    }
+  },
+  {
+    "id": "payment-flow",
+    "config": {
+      "src/hello/payment/payment-validate.step.js": {
+        "x": 42,
+        "y": -161
+      },
+      "src/hello/payment/payment-risk-check.step.ts": {
+        "x": 850,
+        "y": -153
+      },
+      "src/hello/payment/payment-reconciliation-job.step.ts": {
+        "x": -328,
+        "y": -321
+      },
+      "src/hello/payment/payment-reconciliation-job.cron.step.ts": {
+        "x": -802,
+        "y": -421
+      },
+      "src/hello/payment/payment-invoice.step.ts": {
+        "x": 945,
+        "y": 118
+      },
+      "src/hello/payment/payment-finalize.step.ts": {
+        "x": 515,
+        "y": 366
+      },
+      "src/hello/payment/payment-email.step.ts": {
+        "x": 31,
+        "y": 408
+      },
+      "src/hello/payment/payment-create.step.ts": {
+        "x": 445,
+        "y": -244
+      },
+      "src/hello/payment/payment-confirm.step.ts": {
+        "x": 521,
+        "y": 92
+      },
+      "src/hello/payment/dead-letter-retry-job.step.ts": {
+        "x": -446,
+        "y": 105
+      },
+      "src/hello/payment/dead-letter-retry-job.cron.step.ts": {
+        "x": -845,
+        "y": 208
+      },
+      "src/hello/api/payment-start.step.ts": {
+        "x": -648,
+        "y": -119
+      },
+      "src/hello/payment/payment-fraud-check.step.ts": {
+        "x": 11,
+        "y": 119
       }
     }
   }
