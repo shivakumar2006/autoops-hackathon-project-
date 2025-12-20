@@ -38,12 +38,12 @@ declare module 'motia' {
     'OnboardingValidate': EventHandler<never, { topic: 'onboarding-profile-created'; data: never }>
     'OnboardingSendEmail': EventHandler<never, { topic: 'onboarding-completed'; data: never }>
     'OnboardingRiskResult': EventHandler<never, { topic: 'onboarding-email-sent'; data: never }>
-    'OnboardingRiskCheck': EventHandler<never, never>
+    'OnboardingRiskCheck': EventHandler<never, { topic: 'onboarding-risk-result'; data: {} }>
     'OnboardingProfileCreated': EventHandler<never, { topic: 'onboarding-metadata-stored'; data: never }>
     'OnboardingMetadataStored': EventHandler<never, { topic: 'onboarding-risk-check'; data: never }>
     'OnboardingComplete': EventHandler<never, never>
-    'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, never>
-    'ValidateLoginJS': EventHandler<{}, never>
+    'ValidateSignupJS': EventHandler<{ userId: string; email: string; name: string }, { topic: 'user-signed-up'; data: {} }>
+    'ValidateLoginJS': EventHandler<{}, { topic: 'user-logged-in'; data: {} }>
     'RetryEngine': EventHandler<never, { topic: 'retry-event-execute'; data: never }>
     'AdminDLQList': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'DeadLetterQueueHandler': EventHandler<never, { topic: 'retry-needed'; data: never }>
@@ -51,11 +51,12 @@ declare module 'motia' {
     'AdminReprocessTrigger': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'retry-event-execute'; data: never }>
     'PaymentStartApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'payment-validate'; data: never } | { topic: 'event.failed'; data: never }>
     'OnboardingStart': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'onboarding-validate'; data: never }>
-    'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } }>
+    'SignupApi': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-signup'; data: { userId: string; email: string; name: string } } | { topic: 'user-signed-up'; data: {} }>
     'AuthMeAPI': ApiRouteHandler<Record<string, unknown>, unknown, never>
-    'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} }>
+    'LoginAPI': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'validate-login'; data: {} } | { topic: 'user-logged-in'; data: {} }>
     'AdminAnalytics': ApiRouteHandler<Record<string, unknown>, unknown, never>
     'PaymentFraudCheck': EventHandler<never, { topic: 'payment-confirmed'; data: never } | { topic: 'risk-evaluated'; data: never }>
+    'FraudCheckPython': EventHandler<{}, { topic: 'risk-evaluated'; data: never }>
   }
     
 }
