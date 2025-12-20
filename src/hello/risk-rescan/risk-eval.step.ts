@@ -3,7 +3,7 @@ export const config = {
     type: "event",
     subscribes: ["risk-eval"],
     description: "Risk eval job",
-    emits: [""],
+    emits: [],
     flows: ["risk-flow"]
 };
 

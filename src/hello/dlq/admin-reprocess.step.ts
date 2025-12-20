@@ -6,7 +6,7 @@ export const config = {
     type: "api",
     method: "POST",
     path: "/admin/reprocess",
-    emits: ["retry-event-execute"],
+    emits: ["retry_event_execute"],
     flows: ["auto-recovery-flow"]
 };
 
@@ -20,10 +20,10 @@ export const handler = async (req, { emit, logger }) => {
         return { status: 404, body: { message: "Event not found" } };
     }
 
-    logger.info("Admin reprocessing event:", { eventName });
+    logger.info("Admin reprocessing event", { eventName });
 
     await emit({
-        topic: "retry-event-execute",
+        topic: "retry_event_execute",
         data: record.payload
     });
 

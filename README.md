@@ -132,6 +132,21 @@ and easier to debug than traditional queue-based architectures., where I add thi
 - Event Driven Architecture 
 - Background Jobs 
 
+## 🐳 Run Using Docker (Recommended for Judges)
+This project is fully Dockerized.
+Judges can run the entire backend without installing Node, Python, or Motia.
+
+Pull Image from Docker Hub:
+docker pull shivakumar2006/autoops:latest
+
+Run Container:
+docker run -d \
+  -p 3000:3000 \
+  --env-file .env \
+  shivakumar2006/autoops:latest
+
+App will be available at
+http://localhost:3000
 
 ## 🧪 How to Test 
 

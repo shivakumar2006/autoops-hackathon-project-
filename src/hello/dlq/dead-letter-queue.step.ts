@@ -5,8 +5,8 @@ export const config = {
     name: "DeadLetterQueueHandler",
     type: "event",
     description: "Dead letter queue handler",
-    subscribes: ["event.failed"],
-    emits: ["retry-needed"],
+    subscribes: ["event-failed"],
+    emits: ["retry_needed"],
     flows: ["auto-recovery-flow"]
 };
 
@@ -25,7 +25,7 @@ export const handler = async (input, { emit, logger }) => {
     logger.error("DLQ entry created", input);
 
     await emit({
-        topic: "retry-needed",
+        topic: "retry_needed",
         data: input
     })
 }

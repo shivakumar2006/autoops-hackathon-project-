@@ -15,7 +15,7 @@ export const config: ApiRouteConfig = {
     path: "/payment/start",
     method: "POST",
     description: "Initiate a payment",
-    emits: ["payment-validate", "event.failed"],
+    emits: ["payment-validate", "event-failed"],
     flows: ["payment-flow"],
 };
 
@@ -42,7 +42,7 @@ export const handler = async (req: any, { emit, logger }: any) => {
 
             // ✅ DLQ fires on validation failure
             await emit({
-                topic: "event.failed",
+                topic: "event-failed",
                 data: {
                     eventName: "payment-start",
                     payload: req.body,
@@ -87,7 +87,7 @@ export const handler = async (req: any, { emit, logger }: any) => {
 
         // 🔥 DLQ Emit (runtime errors)
         await emit({
-            topic: "event.failed",
+            topic: "event-failed",
             data: {
                 eventName: "payment-start",
                 payload: req.body,
