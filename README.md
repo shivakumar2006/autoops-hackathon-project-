@@ -201,6 +201,18 @@ GET /auth/me
     key - Authorization, 
     value - Bearer //add jwt token here//
 
+## Database Setup
+This project uses MongoDB.
+
+For hackathon evaluation and local testing, MongoDB is expected
+to be running locally.
+
+Default connection:
+mongodb://localhost:27017/autoops
+
+⚠️ MongoDB Atlas is not deployed for this submission.
+To run the project, please ensure MongoDB is running locally.
+
 
 🏆 Why This Backend Can Win
 - Professional-level architecture
