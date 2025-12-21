@@ -13,6 +13,13 @@ This is designed specially for Backend Reloaded Hackathon, this project demonstr
 - One single api provides full system insights.
 - Designed to highlight system-design + backend intelligence.
 
+## 💡 Why Motia?
+- AutoOps heavily relies on durable workflows, retries, and observability.
+Motia allows us to model APIs, background jobs, retries, and AI agents
+using a single primitive (Steps), making the system simpler, safer,
+and easier to debug than traditional queue-based architectures., where I add this at the end or start
+
+
 ## 📈 High level Architecture 
 Event driven architecture with 7 major flows
 
@@ -115,12 +122,6 @@ GET /api/admin/analytics returns complete system intelligence:
 - subscription renewal performance
 - last trust update timestamp
 - One API gives judges the entire backend status.
-
-## 💡 Why Motia?
-- AutoOps heavily relies on durable workflows, retries, and observability.
-Motia allows us to model APIs, background jobs, retries, and AI agents
-using a single primitive (Steps), making the system simpler, safer,
-and easier to debug than traditional queue-based architectures., where I add this at the end or start
 
 ## ⭐️ Tech Stack 
 - Motia Framework 
@@ -234,9 +235,6 @@ This project uses MongoDB.
 
 For hackathon evaluation and local testing, MongoDB is expected
 to be running locally.
-
-Default connection:
-mongodb://localhost:27017/autoops
 
 ⚠️ MongoDB Atlas is not deployed for this submission.
 To run the project, please ensure MongoDB is running locally.
