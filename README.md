@@ -141,26 +141,25 @@ Judges can run the entire backend without installing Node, Python, or Motia.
 (Docker connects to host MongoDB)
 
 Pull Image from Docker Hub:
-docker pull shivakumar2006/autoops:latest
+- docker pull shivakumar2006/autoops:latest
 
 2️⃣ Create .env file
 Create a file named .env in the same directory:
 
-MONGO_URI=mongodb://host.docker.internal:27017
-MONGO_DB=autoops
-JWT_SECRET=super-secret-key-here-please-change-it
-PORT=3000
-NODE_ENV=production
-
-USE_REDIS=false
+- MONGO_URI=mongodb://host.docker.internal:27017
+- MONGO_DB=autoops
+- JWT_SECRET=super-secret-key-here-please-change-it
+- PORT=3000
+- NODE_ENV=production
+- USE_REDIS=false
 
 Make sure MongoDB is running locally on port 27017
 
 Run Container:
-docker run --add-host=host.docker.internal:host-gateway -p 3000:3000 --env-file .env shivakumar2006/autoops:latest
+- docker run --add-host=host.docker.internal:host-gateway -p 3000:3000 --env-file .env shivakumar2006/autoops:latest
 
 App will be available at
-http://localhost:3000
+- http://localhost:3000
 
 ## 🧪 How to Test 
 
