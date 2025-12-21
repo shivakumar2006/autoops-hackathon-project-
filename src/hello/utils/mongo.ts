@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectMongo = async (mongoUri?: string) => {
-    const uri = mongoUri || process.env.MONGO_URI || "mongodb://localhost:27017";
+    const uri = mongoUri || process.env.MONGO_URI || "mongodb://host.docker.internal:27017";
     if (mongoose.connection.readyState === 1) {
         return mongoose.connection;
     }

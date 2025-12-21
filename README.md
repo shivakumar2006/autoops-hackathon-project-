@@ -140,11 +140,12 @@ Pull Image from Docker Hub:
 docker pull shivakumar2006/autoops:latest
 
 Run Container:
-docker run -d \
+docker run \
+  --add-host=host.docker.internal:host-gateway \
   -p 3000:3000 \
   --env-file .env \
   shivakumar2006/autoops:latest
-
+  
 App will be available at
 http://localhost:3000
 

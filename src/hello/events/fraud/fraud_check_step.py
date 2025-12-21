@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 import random 
 from pymongo import MongoClient
 
-MONGO_URI = os.environ.get("MONGO_URI", "mongodb://localhost:27017")
+MONGO_URI = os.environ.get("MONGO_URI", "mongodb://host.docker.internal:27017")
 DB_NAME = os.environ.get("MONGO_DB", "autoops")
 
 config = {
